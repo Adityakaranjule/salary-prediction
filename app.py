@@ -40,6 +40,7 @@ def set_bg_video():
             padding: 2rem;
             border-radius: 20px;
         }}
+        "<h1 style='color:black; text-align:center;'>☀ SOLAR POWER PREDICTION MODEL</h1>",
         </style>
 
         <div class="overlay"></div>
@@ -67,6 +68,7 @@ if st.button("Predict Salary"):
     input_data = np.array([[experience]])
     predicted_salary = model.predict(input_data)[0]
     st.success(f"Predicted Salary: ₹{predicted_salary:,.2f}")
+
 
 
 
