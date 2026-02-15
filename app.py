@@ -40,7 +40,12 @@ def set_bg_video():
             padding: 2rem;
             border-radius: 20px;
         }}
-          <h1 style='color:black; text-align:center;'>☀ SOLAR POWER PREDICTION MODEL</h1>
+        .title-black {{
+            color: black !important;
+            text-align: center;
+            font-size: 3rem;
+            font-weight: bold;
+        }}
         </style>
 
         <div class="overlay"></div>
@@ -58,7 +63,7 @@ set_bg_video()
 model = joblib.load('linearmodel.pkl')
 
 # App title
-st.title("Salary Prediction App")
+#st.title("Salary Prediction App")
 
 # User input
 experience = st.number_input("Enter years of experience:", min_value=0.0, max_value=50.0, step=0.1)
@@ -68,6 +73,7 @@ if st.button("Predict Salary"):
     input_data = np.array([[experience]])
     predicted_salary = model.predict(input_data)[0]
     st.success(f"Predicted Salary: ₹{predicted_salary:,.2f}")
+
 
 
 
